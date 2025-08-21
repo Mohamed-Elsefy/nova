@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nova/core/utils/app_colors.dart';
-import 'package:nova/core/utils/app_strings.dart';
 import 'package:nova/core/utils/app_text_style.dart';
+import 'package:nova/generated/l10n.dart';
 
 class OnboardingCard extends StatelessWidget {
   const OnboardingCard({super.key});
@@ -19,11 +19,11 @@ class OnboardingCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(AppStrings.lookGood, style: AppTextStyle.h1),
+          Text(S.of(context).lookGood, style: AppTextStyle.h1),
           const SizedBox(height: 6),
 
-          const Text(
-            AppStrings.createYourIndiviual,
+          Text(
+            S.of(context).createYourIndiviual,
             textAlign: TextAlign.center,
             style: AppTextStyle.b3,
           ),
@@ -40,7 +40,7 @@ class OnboardingCard extends StatelessWidget {
                 ),
               ),
               onPressed: () {},
-              child: const Text(AppStrings.next, style: AppTextStyle.b2),
+              child: Text(S.of(context).next, style: AppTextStyle.b2),
             ),
           ),
         ],

@@ -1,34 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nova/core/cubit/locale_cubit.dart';
 import 'package:nova/core/utils/app_colors.dart';
 
-const List<String> _lang = ['en', 'ar'];
+const Map<String, String> _langLabels = {'en': 'EN', 'ar': 'عربي'};
 
-class DropDownLang extends StatefulWidget {
+class DropDownLang extends StatelessWidget {
   const DropDownLang({super.key});
 
   @override
-  State<DropDownLang> createState() => _DropDownLangState();
-}
-
-class _DropDownLangState extends State<DropDownLang> {
-  String dropDownValue = _lang.first;
-
-  @override
   Widget build(BuildContext context) {
+    final currentCode = context.watch<LocaleCubit>().state.languageCode;
+
     return DropdownButton(
       menuWidth: 70,
       menuMaxHeight: 100,
-      dropdownColor: AppColors.lightGray,
+      dropdownColor: AppColors.offWhite,
       underline: const SizedBox(),
-      value: dropDownValue,
-      items: _lang
-          .map<DropdownMenuItem<String>>(
-            (String val) => DropdownMenuItem(value: val, child: Text(val)),
+      value: currentCode,
+      items: _langLabels.keys
+          .map(
+            (code) =>
+                DropdownMenuItem(value: code, child: Text(_langLabels[code]!)),
           )
           .toList(),
-      onChanged: (val) => setState(() {
-        dropDownValue = val!;
-      }),
+
+      onChanged: (value) {
+        if (value == null) return;
+        context.read<LocaleCubit>().setLocale(Locale(value));
+      },
     );
   }
 }
