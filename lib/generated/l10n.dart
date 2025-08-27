@@ -59,9 +59,9 @@ class S {
     return Intl.message('NOVA', name: 'nova', desc: '', args: []);
   }
 
-  /// `Next`
-  String get next {
-    return Intl.message('Next', name: 'next', desc: '', args: []);
+  /// `Get Start`
+  String get getStart {
+    return Intl.message('Get Start', name: 'getStart', desc: '', args: []);
   }
 
   /// `Look Good, Feel Good`

@@ -1,3 +1,3 @@
 abstract class RouterKeys {
-  static const String onBoarding = '/';
+  static const String onBoarding = '/', home = '/home';
 }

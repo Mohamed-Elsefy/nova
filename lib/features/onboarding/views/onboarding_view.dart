@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nova/core/functions/calc_padding.dart';
+import 'package:nova/core/functions/navigation.dart';
+import 'package:nova/core/functions/show_toast.dart';
+import 'package:nova/core/router/router_keys.dart';
 import 'package:nova/core/utils/app_colors.dart';
 import 'package:nova/core/utils/assets.dart';
-import 'package:nova/features/onboarding/widgets/drop_down_lang.dart';
-import 'package:nova/features/onboarding/widgets/onboarding_card.dart';
+import 'package:nova/features/onboarding/cubit/onboarding_cubit.dart';
+import 'package:nova/features/onboarding/cubit/onboarding_state.dart';
+import 'package:nova/features/onboarding/views/widgets/drop_down_lang.dart';
+import 'package:nova/features/onboarding/views/widgets/onboarding_card.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
@@ -14,18 +20,27 @@ class OnboardingView extends StatelessWidget {
   Widget build(BuildContext context) {
     final hPadding = calcPadding(context);
 
-    return Scaffold(
-      backgroundColor: AppColors.primColor,
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: hPadding, vertical: 25),
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            if (constraints.maxWidth < breakPoint) {
-              return _verticalLayout();
-            } else {
-              return _horizontalLayout();
-            }
-          },
+    return BlocListener<OnboardingCubit, OnboardingState>(
+      listener: (context, state) {
+        if (state is OnboardingCompleted) {
+          navigateAndRemoveUntil(context, RouterKeys.home);
+        } else if (state is OnboardingError) {
+          showToast(msg: state.error);
+        }
+      },
+      child: Scaffold(
+        backgroundColor: AppColors.primColor,
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: hPadding, vertical: 25),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              if (constraints.maxWidth < breakPoint) {
+                return _verticalLayout();
+              } else {
+                return _horizontalLayout();
+              }
+            },
+          ),
         ),
       ),
     );
