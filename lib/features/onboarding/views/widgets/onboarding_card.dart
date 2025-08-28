@@ -23,7 +23,7 @@ class OnboardingCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(S.of(context).lookGood, style: AppTextStyle.h1),
+          Text(S.of(context).lookGood, style: AppTextStyle.h2),
           const SizedBox(height: 6),
 
           Text(

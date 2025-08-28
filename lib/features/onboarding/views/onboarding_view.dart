@@ -8,7 +8,7 @@ import 'package:nova/core/utils/app_colors.dart';
 import 'package:nova/core/utils/assets.dart';
 import 'package:nova/features/onboarding/cubit/onboarding_cubit.dart';
 import 'package:nova/features/onboarding/cubit/onboarding_state.dart';
-import 'package:nova/features/onboarding/views/widgets/drop_down_lang.dart';
+import 'package:nova/core/widgets/drop_down_lang.dart';
 import 'package:nova/features/onboarding/views/widgets/onboarding_card.dart';
 
 class OnboardingView extends StatelessWidget {
