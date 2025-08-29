@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:nova/core/utils/app_colors.dart';
 import 'package:nova/core/utils/app_text_style.dart';
 import 'package:nova/core/widgets/circular_indicator.dart';
+import 'package:nova/features/home/models/product_model.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final ProductModel product;
+
+  const ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,7 @@ class ProductCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.offWhite,
         boxShadow: const [
-          BoxShadow(color: Colors.grey, blurRadius: 5, offset: Offset(0, 3)),
+          BoxShadow(color: Colors.grey, blurRadius: 7, offset: Offset(0, 2)),
         ],
       ),
 
@@ -21,7 +24,7 @@ class ProductCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CachedNetworkImage(
-            imageUrl: 'https://i.imgur.com/1twoaDy.jpeg',
+            imageUrl: product.images[0],
             placeholder: (context, url) =>
                 const Center(child: CircularIndicator()),
             errorWidget: (context, url, error) => const Icon(Icons.error),
@@ -31,15 +34,15 @@ class ProductCard extends StatelessWidget {
           ),
 
           const SizedBox(height: 4),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            child: Text('100\$', style: AppTextStyle.h2),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            child: Text('${product.price} \$', style: AppTextStyle.h2),
           ),
 
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Text(
-              'name',
+              product.title,
               style: AppTextStyle.b1,
               softWrap: true,
               maxLines: 2,

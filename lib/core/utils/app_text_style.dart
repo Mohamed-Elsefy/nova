@@ -16,7 +16,7 @@ abstract class AppTextStyle {
     fontFamily: 'Tajawal',
     fontSize: 18,
     height: 1,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
   );
   static const TextStyle b2 = TextStyle(
     fontFamily: 'Tajawal',

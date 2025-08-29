@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "createYourIndiviual": MessageLookupByLibrary.simpleMessage(
       "اصنع أسلوبك الفردي والفريد لتبدو مذهلة كل يوم.",
     ),
+    "error": MessageLookupByLibrary.simpleMessage("خطأ"),
     "getStart": MessageLookupByLibrary.simpleMessage("إبدأ"),
     "lookGood": MessageLookupByLibrary.simpleMessage("مظهر جيد، شعور جيد"),
     "nova": MessageLookupByLibrary.simpleMessage("نوفا"),

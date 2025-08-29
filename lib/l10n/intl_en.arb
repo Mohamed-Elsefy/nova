@@ -1,11 +1,13 @@
 {
     "@@locale": "en",
-    "nova" : "NOVA",
+    "nova": "NOVA",
     "@nova": {},
-    "getStart" : "Get Start",
+    "getStart": "Get Start",
     "@getStart": {},
-    "lookGood" : "Look Good, Feel Good",
+    "lookGood": "Look Good, Feel Good",
     "@lookGood": {},
-    "createYourIndiviual" : "Create your individual & unique style and look amazing everyday.",
-    "@createYourIndiviual": {}
+    "createYourIndiviual": "Create your individual & unique style and look amazing everyday.",
+    "@createYourIndiviual": {},
+    "error": "Error",
+    "@error": {}
 }
