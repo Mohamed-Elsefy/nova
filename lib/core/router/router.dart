@@ -5,7 +5,9 @@ import 'package:nova/core/repositories/home_repo/home_repo_impl.dart';
 import 'package:nova/core/router/router_keys.dart';
 import 'package:nova/core/services/service_locator.dart';
 import 'package:nova/features/home/cubit/home_cubit.dart';
+import 'package:nova/features/home/models/product_model.dart';
 import 'package:nova/features/home/views/home_view.dart';
+import 'package:nova/features/home/views/product_details_view.dart';
 import 'package:nova/features/onboarding/cubit/onboarding_cubit.dart';
 import 'package:nova/features/onboarding/views/onboarding_view.dart';
 
@@ -30,6 +32,12 @@ GoRouter router({required String initialLocation}) {
               HomeCubit(HomeRepoImpl(api: _dioCons))..getProducts(),
           child: const HomeView(),
         ),
+      ),
+
+      GoRoute(
+        path: RouterKeys.productDetails,
+        builder: (context, state) =>
+            ProductDetailsView(product: state.extra as ProductModel),
       ),
     ],
   );

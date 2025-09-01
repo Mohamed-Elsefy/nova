@@ -11,9 +11,6 @@ class IconButtonW extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: onPressed,
-      icon: Icon(iconData, color: Colors.white, size: 32),
-    );
+    return IconButton(onPressed: onPressed, icon: Icon(iconData, size: 32));
   }
 }

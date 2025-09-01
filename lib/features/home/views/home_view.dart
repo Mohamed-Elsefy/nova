@@ -20,12 +20,12 @@ class HomeView extends StatelessWidget {
     final hPadding = calcPadding(context);
 
     return Scaffold(
-      backgroundColor: AppColors.primShadow,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        scrolledUnderElevation: 0,
-        surfaceTintColor: Colors.transparent,
         title: Text(S.of(context).nova, style: AppTextStyle.h1),
         backgroundColor: AppColors.primColor,
+        foregroundColor: Colors.white,
+        surfaceTintColor: Colors.transparent,
         actions: [
           IconButtonW(iconData: Icons.search_outlined, onPressed: () {}),
           IconButtonW(iconData: Icons.settings_outlined, onPressed: () {}),

@@ -10,12 +10,13 @@ abstract class AppTextStyle {
   static const TextStyle h2 = TextStyle(
     fontFamily: 'Cairo',
     fontSize: 20,
+    height: 1.3,
     fontWeight: FontWeight.bold,
   );
   static const TextStyle b1 = TextStyle(
     fontFamily: 'Tajawal',
     fontSize: 18,
-    height: 1,
+    height: 1.3,
     fontWeight: FontWeight.w500,
   );
   static const TextStyle b2 = TextStyle(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nova/core/utils/app_colors.dart';
 import 'package:nova/core/utils/app_text_style.dart';
+import 'package:nova/core/widgets/button.dart';
 import 'package:nova/core/widgets/circular_indicator.dart';
 import 'package:nova/features/onboarding/cubit/onboarding_cubit.dart';
 import 'package:nova/features/onboarding/cubit/onboarding_state.dart';
@@ -38,21 +38,10 @@ class OnboardingCard extends StatelessWidget {
               if (state is OnboardingLoading) {
                 return const CircularIndicator();
               }
-              return SizedBox(
-                width: 150,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primColor,
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  onPressed: () {
-                    context.read<OnboardingCubit>().completeOnboarding();
-                  },
-                  child: Text(S.of(context).getStart, style: AppTextStyle.b2),
-                ),
+              return ButtonW(
+                title: S.of(context).getStart,
+                onPressed: () =>
+                    context.read<OnboardingCubit>().completeOnboarding(),
               );
             },
           ),

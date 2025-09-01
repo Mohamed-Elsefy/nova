@@ -22,9 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "add": MessageLookupByLibrary.simpleMessage("أضف إلي السلة"),
     "createYourIndiviual": MessageLookupByLibrary.simpleMessage(
       "اصنع أسلوبك الفردي والفريد لتبدو مذهلة كل يوم.",
     ),
+    "details": MessageLookupByLibrary.simpleMessage("معلومات المنتج"),
     "error": MessageLookupByLibrary.simpleMessage("خطأ"),
     "getStart": MessageLookupByLibrary.simpleMessage("إبدأ"),
     "lookGood": MessageLookupByLibrary.simpleMessage("مظهر جيد، شعور جيد"),

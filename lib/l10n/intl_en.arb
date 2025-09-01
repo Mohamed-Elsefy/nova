@@ -9,5 +9,9 @@
     "createYourIndiviual": "Create your individual & unique style and look amazing everyday.",
     "@createYourIndiviual": {},
     "error": "Error",
-    "@error": {}
+    "@error": {},
+    "details": "Details",
+    "@details": {},
+    "add": "ADD To Cart",
+    "@add": {}
 }

@@ -14,7 +14,7 @@ import 'package:nova/features/onboarding/views/widgets/onboarding_card.dart';
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
 
-  static const double breakPoint = 500;
+  static const double breakPoint = 450;
 
   @override
   Widget build(BuildContext context) {

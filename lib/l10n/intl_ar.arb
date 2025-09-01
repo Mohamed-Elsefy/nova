@@ -1,13 +1,17 @@
 {
     "@@locale": "ar",
-    "nova" : "نوفا",
+    "nova": "نوفا",
     "@nova": {},
-    "getStart" : "إبدأ",
+    "getStart": "إبدأ",
     "@getStart": {},
-    "lookGood" : "مظهر جيد، شعور جيد",
+    "lookGood": "مظهر جيد، شعور جيد",
     "@lookGood": {},
-    "createYourIndiviual" : "اصنع أسلوبك الفردي والفريد لتبدو مذهلة كل يوم.",
+    "createYourIndiviual": "اصنع أسلوبك الفردي والفريد لتبدو مذهلة كل يوم.",
     "@createYourIndiviual": {},
     "error": "خطأ",
-    "@error": {}
+    "@error": {},
+    "details": "معلومات المنتج",
+    "@details": {},
+    "add": "أضف إلي السلة",
+    "@add": {}
 }

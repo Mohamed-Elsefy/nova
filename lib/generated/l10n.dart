@@ -88,6 +88,16 @@ class S {
   String get error {
     return Intl.message('Error', name: 'error', desc: '', args: []);
   }
+
+  /// `Details`
+  String get details {
+    return Intl.message('Details', name: 'details', desc: '', args: []);
+  }
+
+  /// `ADD To Cart`
+  String get add {
+    return Intl.message('ADD To Cart', name: 'add', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
